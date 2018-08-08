@@ -3,7 +3,7 @@ const fs = require("fs");
 const request = require("request");
 
 function finish({ job, build, commit, branch, repo, token, url }) {
-  req = request.post(`${url}/build/${build}/upload-finish?token=${token}`);
+  let req = request.post(`${url}/build/${build}/upload-finish?token=${token}`);
   let form = req.form();
 
   form.append("commit", commit);
@@ -14,7 +14,7 @@ function finish({ job, build, commit, branch, repo, token, url }) {
 
 function upload(args) {
   const { job, build, commit, branch, repo, token, url, files } = args;
-  req = request
+  let req = request
     .post(`${url}/build/${build}/upload?token=${token}`, {}, function(
       err,
       httpResponse,
