@@ -1,6 +1,6 @@
 {
   "name": "menrva-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -16,5 +16,5 @@
     "glob": "^7.1.2",
     "request": "^2.87.0"
   },
-  "gitHead": "bb063fc4cb9acff39c7d409e6859db202fc5ca24"
+  "gitHead": "2e42d529c998fa46747eb0b3e790001f60a932e3"
 }
