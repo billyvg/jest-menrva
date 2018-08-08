@@ -1,0 +1,19 @@
+{
+  "name": "menrva-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "prebuild": "rm -rf lib/",
+    "build": "babel src -d lib --ignore \"*.test.js\"",
+    "dev": "yarn build --watch",
+    "prepublishOnly": "yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "request": "^2.87.0"
+  }
+}

@@ -1,19 +1,23 @@
 {
-  "name": "menrva-cli",
-  "version": "1.2.2",
-  "description": "",
-  "main": "index.js",
-  "bin": {
-    "menrva-cli": "./bin/cli.js"
-  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "lerna run build",
+    "ci": "yarn build && yarn lint && yarn test --ci",
+    "dev": "lerna run build --parallel -- --watch",
+    "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
+    "lint": "eslint .",
+    "release": "lerna publish --conventional-commits && conventional-github-releaser --preset angular",
+    "test": "jest --runInBand"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "glob": "^7.1.2",
-    "minimist": "^1.2.0",
-    "request": "^2.87.0"
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.56",
+    "@babel/core": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.56",
+    "@babel/preset-env": "^7.0.0-beta.56",
+    "lerna": "^3.0.0-rc.0"
   }
 }
