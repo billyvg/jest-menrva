@@ -3,11 +3,12 @@ const fs = require("fs");
 const request = require("request");
 
 function finish({ job, build, commit, branch, repo, token, url }) {
-  let req = request.post(`${url}/build/${build}/upload-finish?token=${token}`);
+  let req = request.post(`${url}/build/upload-finish?token=${token}`);
   let form = req.form();
 
   form.append("commit", commit);
   form.append("branch", branch);
+  form.append("build", build);
   form.append("job", job);
   form.append("repo", repo);
 }
@@ -15,7 +16,7 @@ function finish({ job, build, commit, branch, repo, token, url }) {
 function upload(args) {
   const { job, build, commit, branch, repo, token, url, files } = args;
   let req = request
-    .post(`${url}/build/${build}/upload?token=${token}`, {}, function(
+    .post(`${url}/build/upload?token=${token}`, {}, function(
       err,
       httpResponse,
       body
@@ -38,6 +39,7 @@ function upload(args) {
     });
   });
   form.append("commit", commit);
+  form.append("build", build);
   form.append("branch", branch);
   form.append("job", job);
   form.append("repo", repo);
