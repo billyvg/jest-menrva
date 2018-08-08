@@ -1,34 +1,42 @@
 const client = require("./client");
 
-const job = process.env.TRAVIS_JOB_ID;
-const build = process.env.TRAVIS_BUILD_ID;
-const commit = process.env.TRAVIS_COMMIT;
-const branch = process.env.TRAVIS_BRANCH;
-const repo = process.env.TRAVIS_REPO_SLUG;
-const token = process.env.MENRVA_TOKEN;
-const url = process.env.MENRVA_URL || "https://menrva.ngrok.io";
+const {
+  TRAVIS_JOB_ID,
+  TRAVIS_BUILD_ID,
+  TRAVIS_COMMIT,
+  TRAVIS_BRANCH,
+  TRAVIS_REPO_SLUG,
+  TRAVIS_PULL_REQUEST,
+  TRAVIS_PULL_REQUEST_BRANCH,
+  TRAVIS_PULL_REQUEST_SHA,
+  TRAVIS_PULL_REQUEST_SLUG,
+  MENRVA_TOKEN,
+  MENRVA_URL
+} = process.env;
+
+const defaults = {
+  url: MENRVA_URL || "https://menrva.ngrok.io",
+  token: MENRVA_TOKEN,
+  repo: TRAVIS_REPO_SLUG,
+  job: TRAVIS_JOB_ID,
+  build: TRAVIS_BUILD_ID,
+  commit: TRAVIS_COMMIT,
+  branch: TRAVIS_BRANCH,
+  pr: TRAVIS_PULL_REQUEST,
+  pr_branch: TRAVIS_PULL_REQUEST_BRANCH,
+  pr_sha: TRAVIS_PULL_REQUEST_SHA,
+  pr_slug: TRAVIS_PULL_REQUEST_SLUG
+};
 
 module.exports = {
   upload: args =>
     client.upload({
-      url,
-      token,
-      repo,
-      job,
-      build,
-      commit,
-      branch,
+      ...defaults,
       ...args
     }),
   finish: args =>
     client.finish({
-      url,
-      token,
-      repo,
-      job,
-      build,
-      commit,
-      branch,
+      ...defaults,
       ...args
     })
 };
