@@ -1,6 +1,6 @@
 {
   "name": "jest-preset-menrva",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "2766748b58c35910c00760cd3fdbdc262a0013b2"
+  "gitHead": "27781b1c54c75b51d442008f20982b8f5569ebbf"
 }
