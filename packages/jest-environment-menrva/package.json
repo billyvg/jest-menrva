@@ -1,6 +1,6 @@
 {
   "name": "jest-environment-menrva",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,5 @@
     "jest-environment-puppeteer": "^3.2.1",
     "request": "^2.87.0"
   },
-  "gitHead": "2e42d529c998fa46747eb0b3e790001f60a932e3"
+  "gitHead": "0d0c781977705da761dde31d0a4e479688118ac2"
 }
