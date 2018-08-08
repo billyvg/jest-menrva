@@ -1,1 +1,1 @@
-module.exports = require("./lib/teardown");
+module.exports = require("./lib/teardown").default;

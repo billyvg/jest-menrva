@@ -1,1 +1,1 @@
-module.exports = require("./lib/setup");
+module.exports = require("./lib/setup").default;
