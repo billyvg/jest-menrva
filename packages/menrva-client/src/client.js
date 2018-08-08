@@ -14,7 +14,7 @@ function finish({ job, build, commit, branch, repo, token, url }) {
 }
 
 function upload(args) {
-  const { job, build, commit, branch, repo, token, url, file, testName } = args;
+  const { token, filePath, url, ...rest } = args;
   let req = request
     .post(`${url}/build/upload?token=${token}`, {}, function(
       err,
@@ -30,19 +30,16 @@ function upload(args) {
       finish(args);
     })
     .on("error", function(err) {
-      // console.error(err);
+      console.error(err);
     });
+
   let form = req.form();
-  form.append("file", fs.createReadStream(file), {
-    filename: file
+
+  form.append("file", fs.createReadStream(filePath), {
+    filename: filePath
   });
 
-  form.append("testName", testName);
-  form.append("commit", commit);
-  form.append("build", build);
-  form.append("branch", branch);
-  form.append("job", job);
-  form.append("repo", repo);
+  Object.keys(rest).forEach(key => form.append(key, rest[key]));
 }
 
 module.exports = {
