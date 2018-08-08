@@ -1,11 +1,12 @@
 {
   "name": "jest-preset-menrva",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "bb063fc4cb9acff39c7d409e6859db202fc5ca24"
 }
