@@ -1,6 +1,5 @@
 {
   "globalSetup": "jest-environment-menrva/setup",
   "globalTeardown": "jest-environment-menrva/teardown",
-  "testEnvironment": "jest-environment-menrva",
-  "setupTestFrameworkScriptFile": "expect-menrva"
+  "testEnvironment": "jest-environment-menrva"
 }
