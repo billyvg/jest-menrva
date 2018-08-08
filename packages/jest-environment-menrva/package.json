@@ -1,11 +1,11 @@
 {
   "name": "jest-environment-menrva",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf lib/",
-    "build": "babel src -d lib --ignore \"*.test.js\"",
+    "build": "babel src -d lib --ignore \"*.test.js\" --config-file ../../.babelrc",
     "dev": "yarn build --watch",
     "prepublishOnly": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +17,5 @@
     "jest-environment-puppeteer": "^3.2.1",
     "request": "^2.87.0"
   },
-  "gitHead": "ae6514f7ca654b7655899c3d13d308e34529cc14"
+  "gitHead": "28ade6650f5cbc8e8dfe5b2b2342dd33ea67167a"
 }
