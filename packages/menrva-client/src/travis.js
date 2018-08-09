@@ -22,7 +22,7 @@ const defaults = {
   build: TRAVIS_BUILD_ID,
   commit: TRAVIS_COMMIT,
   branch: TRAVIS_BRANCH,
-  pr: TRAVIS_PULL_REQUEST,
+  pr: TRAVIS_PULL_REQUEST !== "false" ? TRAVIS_PULL_REQUEST : false,
   pr_branch: TRAVIS_PULL_REQUEST_BRANCH,
   pr_sha: TRAVIS_PULL_REQUEST_SHA,
   pr_slug: TRAVIS_PULL_REQUEST_SLUG
