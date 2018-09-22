@@ -10,8 +10,8 @@ jest.mock("../util/api", () => {
   };
 });
 describe("Index", function() {
-  it("renders", async function() {
+  it("renders", function() {
     let wrapper = mount(<Index repos={["billyvg/menrva"]} />);
-    await expect(wrapper).toSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

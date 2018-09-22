@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import BuildInfo from "./BuildInfo";
 
 describe("BuildInfo", function() {
-  it("renders", async function() {
+  it("renders", function() {
     const build = {
       job: "414643450",
       commit: "a2fa1e94cd1472d082cc2c24c1955e244c8d70e6",
@@ -71,6 +71,6 @@ describe("BuildInfo", function() {
       },
     };
     let wrapper = mount(<BuildInfo {...build} />);
-    await expect(wrapper).toSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

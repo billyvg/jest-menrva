@@ -5,9 +5,9 @@ import { Build } from "./build";
 import mock from "../mock-response";
 
 describe("Build", function() {
-  it("renders", async function() {
+  it("renders", function() {
     const data = mock.builds.find(b => b.id === 134);
     let wrapper = mount(<Build build={data} />);
-    await expect(wrapper).toSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

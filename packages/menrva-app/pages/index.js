@@ -25,7 +25,9 @@ class Index extends React.Component {
         </BuildsHeader>
         {repos.map((repo, i) => (
           <Repo key={i}>
-            <Link href={{ pathname: "/builds", query: { repo } }}>{repo}</Link>
+            <Link href={{ pathname: "/builds", query: { repo } }}>
+              <a>{repo}</a>
+            </Link>
           </Repo>
         ))}
       </div>

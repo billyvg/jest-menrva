@@ -5,12 +5,12 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "ci": "yarn build && yarn lint && yarn test --ci",
+    "ci": "yarn build && yarn lint && yarn test --ci --runInBand",
     "dev": "lerna run build --parallel -- --watch",
     "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
     "release": "lerna publish",
-    "test": "jest --runInBand"
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.56",
