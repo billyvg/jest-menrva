@@ -2,15 +2,16 @@ import path from "path";
 
 import puppeteer from "puppeteer";
 import menrva from "menrva-client";
-import readConfig from "jest-environment-puppeteer/lib/readConfig";
 
-let browser;
+const DEFAULT_CONFIG_CI = {
+  launch: {
+    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
+  exitOnPageError: true
+};
+
+let browser = puppeteer.launch(process.env.CI ? DEFAULT_CONFIG_CI.launch : {});
 let queue = [];
-
-(async () => {
-  const config = await readConfig();
-  browser = puppeteer.launch(config.launch);
-})();
 
 const createSnapshot = async ({ html, fileName, testName }) => {
   const page = await (await browser).newPage();
