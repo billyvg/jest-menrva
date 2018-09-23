@@ -14,14 +14,11 @@ export default class Upload extends React.Component {
     data.append("file", this.uploadInput.files[0]);
 
     const idToken = await firebase.auth().currentUser?.getIdToken();
-    const response = await axios.post("/api/placeholder-token/upload", data, {
+    await axios.post("/api/placeholder-token/upload", data, {
       headers: {
-        Authorization: `Bearer: ${idToken}`
-      }
+        Authorization: `Bearer: ${idToken}`,
+      },
     });
-
-    // const json = await response.json();
-    // console.log(await response.json());
   };
 
   render() {

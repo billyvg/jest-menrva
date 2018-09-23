@@ -1,12 +1,10 @@
 import React from "react";
-import styled from "react-emotion";
 import Link from "next/link";
 import { withRouter } from "next/router";
 
 import BuildInfo from "../components/BuildInfo";
 import BreadCrumbs from "../components/Breadcrumbs";
 import LoadingSpinner from "../components/LoadingSpinner";
-import theme from "../styles/theme";
 import api from "../util/api";
 
 class Builds extends React.Component {

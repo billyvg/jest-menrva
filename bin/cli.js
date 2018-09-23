@@ -6,8 +6,6 @@ const client = require("../src/client");
 const _ = argv._;
 const cmd = _[0];
 const fileGlob = _[1];
-let req;
-let form;
 
 const job = argv.job || process.env.TRAVIS_JOB_ID;
 const build = argv.build || process.env.TRAVIS_BUILD_ID;

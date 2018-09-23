@@ -24,21 +24,12 @@ class BuildInfo extends Component {
     let {
       branch,
       build,
-      commit,
       head_commit,
-      sender,
-      job,
       repo,
-      repo_slug,
       status,
       files,
       pr,
       pr_branch,
-      pr_sha,
-      pr_slug,
-      started_at,
-      showMeta,
-      showApproveButton,
     } = this.props;
 
     return (
@@ -87,18 +78,6 @@ let Container = styled("div")`
     background: ${theme.gray3};
     cursor: pointer;
   }
-`;
-
-let SnapshotCount = styled("div")`
-  width: 3em;
-  height: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${p => getColor(p.status)};
-  color: ${(p => p.status == "pending") ? "inherit" : "#fff"};
-  border-radius: 3em;
-  font-weight: bold;
 `;
 
 let PullRequestTitle = styled("h1")`

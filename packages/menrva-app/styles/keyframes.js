@@ -1,4 +1,4 @@
-import {keyframes} from 'react-emotion';
+import { keyframes } from "react-emotion";
 
 export let fadeIn = keyframes`
   from {
@@ -8,4 +8,4 @@ export let fadeIn = keyframes`
   to {
     opacity: 1;
   }
-`
+`;

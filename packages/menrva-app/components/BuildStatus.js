@@ -21,7 +21,10 @@ export default class BuildStatus extends React.Component {
         {(status == "passed" || status == "approved") && <Approved />}
         {status == "pending" && <Pending />}
         {status == "failed" && <Failed />}
-        {count && !(status == "passed" || status == "approved") && <Count status={status}>{count}</Count>}
+        {count &&
+          !(status == "passed" || status == "approved") && (
+            <Count status={status}>{count}</Count>
+          )}
       </Container>
     );
   }
@@ -54,7 +57,7 @@ let Count = styled("div")`
   right: 0;
   transform: translate(35%, -40%);
   background: ${p => getColor(p.status)};
-  color: ${p => (p.status == "pending") ? theme.gray7 : "#fff" };
+  color: ${p => (p.status == "pending" ? theme.gray7 : "#fff")};
   border-radius: 2em;
   width: 1.5em;
   height: 1.5em;
