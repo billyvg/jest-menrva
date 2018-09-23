@@ -5,7 +5,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "ci": "yarn build && yarn lint && yarn test-ci",
+    "ci": "yarn build && yarn lint && lerna run test-ci",
     "dev": "lerna run build --parallel -- --watch",
     "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
