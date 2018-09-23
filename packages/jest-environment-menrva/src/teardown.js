@@ -2,9 +2,15 @@ import path from "path";
 
 import puppeteer from "puppeteer";
 import menrva from "menrva-client";
+import readConfig from "jest-environment-puppeteer/lib/readConfig";
 
-let browser = puppeteer.launch();
+let browser;
 let queue = [];
+
+(async () => {
+  const config = await readConfig();
+  browser = puppeteer.launch(config.launch);
+})();
 
 const createSnapshot = async ({ html, fileName, testName }) => {
   const page = await (await browser).newPage();
