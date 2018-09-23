@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint ./",
     "test": "NODE_ENV=test yarn jest",
+    "test-ci": "NODE_ENV=test yarn test --runInBand",
     "dev": "NODE_ENV=development yarn nodemon ./server --exec babel-node --presets @babel/preset-env",
     "build": "yarn build:next && yarn build:server",
     "build:next": "next build",
