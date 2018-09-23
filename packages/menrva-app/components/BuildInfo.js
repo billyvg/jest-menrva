@@ -54,13 +54,6 @@ class BuildInfo extends Component {
   }
 }
 
-let getColor = status => {
-  if (status == "pending") return theme.yellow;
-  if (status == "passed") return theme.green;
-  if (status == "failed") return theme.red;
-  return theme.gray8;
-};
-
 let Container = styled("div")`
   color: ${theme.gray7};
   background: ${theme.gray2};
