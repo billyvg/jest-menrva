@@ -7,3 +7,6 @@ cache:
   directories:
     - "$NODE_DIR"
     - "node_modules"
+
+script:
+  - yarn ci
