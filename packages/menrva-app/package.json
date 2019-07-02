@@ -1,6 +1,6 @@
 {
   "name": "menrva-app",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -50,8 +50,8 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.8.0",
-    "jest-preset-menrva": "^1.1.0",
-    "menrva-client": "^1.1.0",
+    "jest-preset-menrva": "^2.0.0",
+    "menrva-client": "^2.0.0",
     "nodemon": "^1.19.1",
     "puppeteer": "^1.18.1",
     "react-test-renderer": "^16.8.6"
